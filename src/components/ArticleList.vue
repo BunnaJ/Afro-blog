@@ -1,15 +1,16 @@
 <template>
   <div class="article_container">
 
-       <div  v-for="item in ArticlesItem" :key="item.ID" class="article_content">
-        <router-link :to="{name: 'ArticleDetails', params: {id: item.ID}}">
-        <div class="practical_guid"> <h4>{{item.title}}</h4></div>
+       <div v-for="item in ArticlesItem" :key="item.ID" class="article_content">
+        <router-link :to="{name: 'ArticleDetails', params: {id: item.slug}}" class="custom-link">
+        <div id="all" class="practical_guid"> <h4>{{item.title}}</h4></div>
         </router-link>
-        <div class="date_time">{{item.date}}</div>
+        <div  id="all" class="date_time">{{item.date}}</div>
+         <div  id="all" class="excerpt">{{item.slug}}</div>
         <div class="article_image">
         <img :src="item.featured_image" alt="">
         </div>
-       <div class="excerpt">{{item.excerpt}}</div>
+      
      
     </div>
    
@@ -57,32 +58,26 @@ export default {
 
 }
 .article_content {
-  width: 520px;
-  border: 1px solid #cfcdae;
-  margin-bottom: 50px;
-  padding: 20px;
+  width: 400px;
   border-radius: 5px;
+  padding: 0 40px;
 }
 .practical_guid {
-  /* width: 401px; */
-  /* height: 32px; */
+
   font-weight: 700;
   font-family: inter;
   font-size: 23px;
 }
 .date_time {
-  /* width: 250px; */
-  /* height: 24px; */
+ 
   font-family: inter;
   font-size: 16px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
-  padding: 15px 15px;
-
+ 
 }
 .proper {
-  /* width: 500px; */
-  /* height: 32px; */
+
   font-family: inter;
   font-family: 500;
   font-size: 20px;
@@ -97,7 +92,12 @@ export default {
 .excerpt {
   width: 100%;
   overflow: hidden;
-  padding-top: 10px;
+  padding: 10px 0;
 }
-
+.custom-link {
+  text-decoration: none;
+  color: orange;
+}
+#all {
+}
 </style>

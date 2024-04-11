@@ -1,59 +1,58 @@
 <template>
   <div class="container">
-    <p>hello this is main content page</p>
-    <div class="">{{ArticlesItem.date}}</div>
-    <div class="">{{id}}</div>
-    <div v-for="items in details"  :key="items.ID"  class="">
-      <p>{{items.content}}</p>
+     <div v-if="loading" class="spiner">
+        <Loader />
+      </div>
+    <div v-if="post" class="item">
+      <h3>{{post.title}}</h3>
+      <p>{{post.excerpt}}</p>
+      
     </div>
+    <Fotter />
   </div>
 </template>
 
 <script>
+import Fotter from '../components/FotterBox.vue'
+import Loader from '../components/LoaderSpin.vue'
 export default {
-  data() {
-    return {
-      id: '',
-      ArticlesItem: '',
-      details: ''
-    }
+ components: {
+    Fotter,
+    Loader
+ },
+ data() {
+  return {
+  }
+ },
+ computed : {
+  post() {
+    return this.$store.state.post
   },
-
- async mounted() {
-    let url = 'https://public-api.wordpress.com/rest/v1.1/sites/leccelblog.wordpress.com/posts?category=album&number=100';
-    let slug = 'https://public-api.wordpress.com/rest/v1.1/sites/leccelblog.wordpress.com/posts/slug:olamide-carpe-diem-album'
-      try {
-        const response = await fetch(url);
-        if(!response.ok) {
-          throw new Error(`http error: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log(data)
-        this.ArticlesItem = data.posts;
-      }
-      catch(error) {
-        console.error('this is the error:in the url api', error)
-      }
-       this.id = this.$route.params.id;
-
-    try {
-      const response = await fetch(slug);
-        if(!response.ok) {
-          throw new Error(`http error: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log(slug)
-        this.details = data.posts;
-    } 
-    catch(error) {
-        console.error('this is the error in the slug api:', error)
-      } 
-
-}, 
- 
+  loading() {
+   return  this.$store.state.loading
+  }
+ },
+ mounted() {
+  console.log(this.$route.params.id)
+   this.$store.dispatch('fetchPost', this.$route.params.id)
+    
+ },
 }
+ 
 </script>
 
 <style>
-
+.item {
+  background: rgb(142, 128, 156);
+  padding: 20%;
+  border-radius: 5px;
+}
+.item h3 {
+  text-decoration: underline;
+}
+.spiner {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
 </style>

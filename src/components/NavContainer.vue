@@ -13,7 +13,7 @@
        <div class="mood_toggle">
       <div class="switch_icon">
          <i class="fa-solid fa-moon"></i>
-      <i class="fa-solid fa-sun"></i>
+      <!-- <i class="fa-solid fa-sun"></i> -->
       </div>
        <div class="link_icon">
       <i class="fa-solid fa-link"></i>
@@ -29,10 +29,7 @@
       </div>
     </div>
    <div class="article">
-   <router-link to="/AboutPage">
      <h4>Articles</h4>
-   </router-link>
-
    </div>
 
 </div>
@@ -50,6 +47,7 @@ export default {
   --color1 : rgba(249, 139, 77, 1);
   --color2: rgba(19, 19, 19, 0.65);
 }
+
 .nav_container{
   display: flex;
   align-items: center;
@@ -123,7 +121,7 @@ export default {
   outline: none;
 }
 .article h4 {
-  /* font-family: inter; */
+
   font-weight: 700;
   font-size: 20px;
   color: var(--color1);
@@ -131,5 +129,4 @@ export default {
   text-decoration: none;
   
 }
-
 </style>

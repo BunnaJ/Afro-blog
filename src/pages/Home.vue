@@ -2,19 +2,22 @@
   <div class="main_container">
     <NavContainer />
     <ArticleList />
+    <Fotter />
   </div>
 </template>
 
 <script>
 import NavContainer from '../components/NavContainer.vue'
 import ArticleList from '../components/ArticleList.vue'
+import Fotter from '../components/FotterBox.vue'
 export default {
   name: 'App',
   components:  {
     NavContainer,
     ArticleList,
+    Fotter
   }
- 
+
 }
 </script>
 
