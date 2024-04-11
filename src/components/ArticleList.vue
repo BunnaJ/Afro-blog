@@ -58,7 +58,6 @@ export default {
 
 }
 .article_content {
-  width: 400px;
   border-radius: 5px;
   padding: 0 40px;
 }
@@ -98,6 +97,22 @@ export default {
   text-decoration: none;
   color: orange;
 }
-#all {
+
+
+@media screen and (max-width: 480px) {
+  /* CSS styles specific to smaller screens */
+
+.article_image img {
+  width: 342px;
+  height: 172px;
+}
+.article_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 }
 </style>

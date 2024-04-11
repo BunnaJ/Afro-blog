@@ -129,4 +129,53 @@ export default {
   text-decoration: none;
   
 }
+
+@media screen and (max-width: 480px) {
+  /* CSS styles specific to smaller screens */
+  .nav_container {
+    width: 100%;
+    border-bottom: 1px solid #82858f ;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .search_input {
+    display: none;
+  }
+  .search_container {
+    border: none;
+    width:90px;
+  }
+  .first_article h1 {
+    width: 364.74px;
+    height: 72px;
+    font-size: 24px;
+  }
+  .first_article {
+    width:300px;
+  } 
+  .first_article_image img {
+    width: 342px;
+    height: 264.41px;
+  }
+  .logo{
+    padding-right: 10px;
+  }
+  .logo h2 {
+    width: 86.61px;
+    font-weight: 600;
+    padding-right: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .switch_icon {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+  .link_icon {
+    padding-left: 5px;
+  } 
+}
 </style>

@@ -28,4 +28,10 @@ export default {
 .afroicons i{
   padding: 10px;
 }
+@media screen and (max-width: 480px) {
+  /* CSS styles specific to smaller screens */
+  .footer_container{
+    width: 100%;
+  }
+}
 </style>

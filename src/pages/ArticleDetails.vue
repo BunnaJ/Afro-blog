@@ -55,4 +55,9 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 480px) {
+  /* CSS styles specific to smaller screens */
+
+} 
 </style>
